@@ -1,0 +1,103 @@
+/* Estilo general del cuerpo */
+body {
+    background-color: #f5f7f8; /* Color de fondo suave */
+  }
+  
+  /* Estilo del Navbar */
+  .custom-navbar {
+    background-color: #343a40; /* Color de fondo oscuro */
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* Estilo del logotipo */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px; /* Tamaño del logo */
+    height: 50px; /* Tamaño del logo */
+    border-radius: 50%; /* Forma circular */
+    margin-right: 10px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  }
+  
+  .brand-text {
+    font-size: 24px;
+    color: #fff; /* Color de texto blanco */
+    font-weight: bold;
+  }
+  
+  /* Estilo del botón de hamburguesa */
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2878, 115, 223, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    padding: 0; /* Sin relleno */
+    font-size: 24px; /* Tamaño de fuente */
+  }
+  
+  /* Estilo de los enlaces del menú */
+  .navbar-nav .nav-item {
+    margin: 0 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    color: #fff; /* Color de texto blanco */
+    transition: color 0.3s, text-shadow 0.3s; /* Transiciones suaves */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #17a2b8; /* Cambio de color al pasar el mouse */
+    text-shadow: 2px 2px 4px rgba(23, 162, 184, 0.3); /* Sombra de texto */
+  }
+  
+  /* Estilo del contenedor del contenido */
+  .container {
+    background-color: #fff; /* Fondo del contenido más claro */
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* Estilo de los enlaces del menú */
+  .navbar-nav .nav-item {
+    margin: 0 10px;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 20px;
+    color: #fff; /* Color de texto blanco */
+    transition: color 0.3s, text-shadow 0.3s; /* Transiciones suaves de color y sombreado de texto */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #17a2b8; /* Cambio de color de texto al pasar el mouse */
+    text-shadow: 2px 2px 4px rgba(23, 162, 184, 0.3); /* Sombreado de texto al pasar el mouse */
+  }
+  
+  /* Estilo del botón de cerrar sesión */
+  .logout-button {
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: background-color 0.3s; /* Transición de color de fondo suave */
+  }
+  
+  .logout-button:hover {
+    background-color: #c82333; /* Cambio de color de fondo al pasar el mouse */
+  }
+  

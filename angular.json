@@ -95,12 +95,26 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss",
+              "https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js",
+              "https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.js",
+              "https://cdn.jsdelivr.net/npm/chart.js"
+             
+              
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9eacb831-7c93-4553-8c70-b14c0f1c0549"
   }
 }

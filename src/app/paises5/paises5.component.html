@@ -1,0 +1,71 @@
+<div class="container mt-5 mb-5">
+  <div class="card mb-4 shadow-sm" style="border-radius: 15px; transition: transform 0.2s;">
+    <div class="card-header bg-image" style="background-image: url('https://fondosmil.co/fondo/8516.jpg'); background-size: cover; background-position: center; color: white;">
+      <h2 class="mb-4 mt-5">2. Grafique los 5 países que incrementaron su población del 2017 al 2018</h2>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <!-- Gráfico de barras para deporte -->
+        <div class="col-6">
+          <div class="text-center" style="width: 100%; height: 450px; text-align: center;">
+            <h3>Gráfico de Incremento</h3>
+            <div style="max-width: 800px; margin: auto;">
+              <div *ngIf="paises.length > 0">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="{
+                                responsive: true,
+                                scales: {
+                                  xAxes: [{ ticks: { autoSkip: false } }],
+                                  yAxes: [{ ticks: { beginAtZero: true } }]
+                                }
+                              }" [legend]="true" chartType="bar">
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfico de línea para deporte -->
+        <div class="col-6">
+          <div style="width: 100%; height: 350px;">
+            <h3 class="text-center">Datos de Incremento</h3>
+            <div class="container mt-4">
+              <div class="mb-3">
+                <label for="" class="form-label">Buscar País</label>
+                <input type="text" class="form-control" [(ngModel)]="paisfilter.Country">
+              </div>
+              <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Nombre del País</th>
+                    <th>Población</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pais of paises | filterBy: paisfilter | paginate: { itemsPerPage: 5, currentPage: page }">
+                    <td>{{ pais.Country }}</td>
+                    <td>{{ pais.populationIncrease }} Personas</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.card.mb-4.shadow-sm:hover {
+  transform: scale(1.01);
+  box-shadow: 1 8px 16px rgba(0,0,0,0.2);
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+}
+</style>
