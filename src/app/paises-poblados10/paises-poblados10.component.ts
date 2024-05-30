@@ -1,8 +1,6 @@
-
 import { ApiService } from '../servicios/api/api.service';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-paises-poblados10',
@@ -11,14 +9,16 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class PaisesPoblados10Component implements OnInit {
 
-  // para barras
+  // para pastel
   paises: any[] = [];
   page: number = 1;
-  barChartLabels: string[] = [];
-  barChartData: ChartDataset<'bar'>[] = [{ data: [], label: 'Poblacion' }];
+  pieChartLabels: string[] = [];
+  pieChartData: ChartDataset<'pie'>[] = [{ data: [], label: 'Población' }];
+  pieChartOptions: ChartOptions<'pie'> = {
+    responsive: true,
+  };
+  pieChartType: ChartType = 'pie';
   paisfilter: any = {Pais: ''};
-
-
 
   // lo demás
   constructor(private apiService: ApiService) {}
@@ -28,8 +28,7 @@ export class PaisesPoblados10Component implements OnInit {
       (data: any) => {
         if (data) {
           this.paises = data;
-          this.prepareBarChartData();
-
+          this.preparePieChartData();
         }
       },
       (error) => {
@@ -38,25 +37,17 @@ export class PaisesPoblados10Component implements OnInit {
     );
   }
 
-
-
-  prepareBarChartData(): void {
-    this.barChartLabels = this.paises.map(pais => pais.Pais);
-    const populationData = this.paises.map(pais => pais.Poblacion);
-    const backgroundColors = this.paises.map((_, index) => this.getColor(index));
-    const borderColors = this.paises.map((_, index) => this.getBorderColor(index));
-
-    this.barChartData = [
+  preparePieChartData(): void {
+    this.pieChartLabels = this.paises.map(pais => pais.Pais);
+    this.pieChartData = [
       {
-        data: populationData,
-        label: 'Población',
-        backgroundColor: backgroundColors,
-        borderColor: borderColors,
+        data: this.paises.map(pais => pais.Poblacion),
+        backgroundColor: this.paises.map((_, index) => this.getColor(index)),
+        borderColor: this.paises.map((_, index) => this.getBorderColor(index)),
         borderWidth: 1
       }
     ];
   }
-
 
   getColor(index: number): string {
     const colors = [

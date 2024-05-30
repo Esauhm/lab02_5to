@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: "ejercico4", component: Ejercicio4Component},
   {path: "ejercico5", component: Ejercicio5Component},
   {path: "ejercicio6", component: Ejercicio6Component},
-  {path: "dashboard", component: DashboardComponent}
+  {path: "dashboard",  component: DashboardComponent},
+  {path: "",  component: DashboardComponent}
 
 ];
 

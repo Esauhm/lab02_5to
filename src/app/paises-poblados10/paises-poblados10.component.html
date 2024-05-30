@@ -1,33 +1,48 @@
 <div class="container mt-5 mb-5">
+  <!-- Nueva tarjeta con el mismo estilo -->
   <div class="card mb-4 shadow-sm" style="border-radius: 15px; transition: transform 0.2s;">
     <div class="card-header bg-image" style="background-image: url('https://fondosmil.co/fondo/8516.jpg'); background-size: cover; background-position: center; color: white;">
-      <h2 class="mb-4 mt-5">1. Grafique los 10 países más poblados del planeta.</h2>
+      <h2 class="mb-1 mt-5 mb-3">1. Grafique los 10 países más poblados del planeta.</h2>
     </div>
-    <div class="card-body">
+    <div class="card-body mt-4">
       <div class="row">
         <!-- Gráfico de barras para deporte -->
         <div class="col-6">
           <div class="text-center" style="width: 100%; height: 450px; text-align: center;">
             <h3>Gráfico de Paises</h3>
-            <div style="max-width: 800px; margin: auto;">
+            <div style="max-width: 350px; margin: auto;">
               <div *ngIf="paises.length > 0">
-                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="{
+                <canvas baseChart [datasets]="pieChartData"  [type]="'pie'" [labels]="pieChartLabels" [options]="{
                                 responsive: true,
-                                scales: {
-                                  xAxes: [{ ticks: { autoSkip: false } }],
-                                  yAxes: [{ ticks: { beginAtZero: true } }]
-                                }
-                              }" [legend]="true" chartType="line">
+                              }" [legend]="true" chartType="pie">
                 </canvas>
               </div>
+              
             </div>
           </div>
         </div>
 
         <!-- Gráfico de línea para deporte -->
         <div class="col-6">
-          <div style="width: 100%; height: 350px;">
-            <h3 class="text-center">Información de Paises</h3>
+          <div class="text-center" style="width: 100%; height: 450px; text-align: center;">
+            <h3>Grafico de Paises</h3>
+            <div style="max-width: 900px; margin: auto;">
+              <div *ngIf="paises.length > 0">
+                <canvas baseChart [datasets]="pieChartData"  [type]="'bar'" [labels]="pieChartLabels" [options]="{
+                                responsive: true,
+                              }" [legend]="true" chartType="pie">
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-1">
+        <div class="col-12">
+          <div class="table-responsive">
+            <div class="container mt-4">
+              <h3 class="text-center">Información de Paises</h3>
             <div class="container mt-4">
               <div class="mb-3">
                 <label for="" class="form-label">Buscar Pais</label>
@@ -69,3 +84,4 @@
   padding: 20px;
 }
 </style>
+

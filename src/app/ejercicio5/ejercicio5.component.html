@@ -39,13 +39,10 @@
                 <div *ngIf="paises.length > 0">
                   <canvas baseChart 
                     [datasets]="barChartDataPopulation" 
+                    [type]="'line'"
                     [labels]="barChartLabels" 
                     [options]="{
                         responsive: true,
-                        scales: {
-                            xAxes: [{ ticks: { autoSkip: false } }],
-                            yAxes: [{ ticks: { beginAtZero: true } }]
-                        }
                     }" 
                     [legend]="true" 
                     chartType="bar">
@@ -103,4 +100,8 @@
     padding: 20px;
   }
   </style>
+
+
+
+
   

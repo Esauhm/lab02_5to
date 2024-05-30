@@ -54,7 +54,7 @@ export class Ejercicio6Component {
     this.barChartDataPopulation = [
       {
         data: populationData,
-        label: 'Population Increase',
+        label: 'Incremento de Población',
         backgroundColor: backgroundColors,
         borderColor: borderColors,
         borderWidth: 1
@@ -64,7 +64,7 @@ export class Ejercicio6Component {
     this.barChartDataGrowth = [
       {
         data: growthData,
-        label: 'Growth Percentage',
+        label: 'Porcentaje de Incremento',
         backgroundColor: backgroundColors,
         borderColor: borderColors,
         borderWidth: 1

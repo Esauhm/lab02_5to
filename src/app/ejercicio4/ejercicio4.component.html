@@ -35,18 +35,16 @@
               <div style="max-width: 800px; margin: auto;">
                 <div *ngIf="paises.length > 0">
                   <canvas baseChart 
-                    [datasets]="barChartDataPopulation" 
-                    [labels]="barChartLabels" 
-                    [options]="{
-                        responsive: true,
-                        scales: {
-                            xAxes: [{ ticks: { autoSkip: false } }],
-                            yAxes: [{ ticks: { beginAtZero: true } }]
-                        }
-                    }" 
-                    [legend]="true" 
-                    chartType="bar">
-                  </canvas>
+                  [datasets]="barChartDataPopulation" 
+                  [type]="'line'"
+                  [labels]="barChartLabels" 
+                  [options]="{
+                      responsive: true,
+                      
+                  }" 
+                  [legend]="true" 
+                  chartType="bar">
+                </canvas>
                 </div>
               </div>
             </div>
